@@ -1,0 +1,66 @@
+@import './buttons.css';
+
+
+body {
+    background-color: #26B4BC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper{
+    max-inline-size: 900px;
+    margin: auto;
+}
+.player {
+    margin-block-start: 100px;
+    /*border: 5px solid red;*/
+    position: relative;
+}
+.player video{
+    inline-size: 100%; /*realmente es responsive*/
+    aspect-ratio: 16/9;
+    vertical-align: middle;
+    object-fit: cover;
+}
+.player-title{
+    color: white;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 20px;
+}
+.player-actions{
+    position: absolute;
+    inset: 0;
+    /*esto lo que hace es estirarlo todo a que tome exactamente las dimensiones del elemento padre
+    osea, las de player*/
+    /*esto es equivalente a poner las 4 cosas estas: */
+    /*inset-inline-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
+    inset-block-start: 0;*/
+    /*border: 5px solid blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*z-index: 2;*/ /*esto era porque el video se renderizaba último en el html y los botones no andaban, c esto "cambio el STACK" y le doy otro orden para que lo hagan después del video*/
+    /*pero lo resuelve
+     de otra forma, colocando arriba de todo el video, antes de los botones. Inicialmente lo habíamos escrito último en el código*/
+    gap: 20px;
+    }
+.player-progress {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    display: flex;
+    padding: 10px;
+}
+.player-progress input {
+    flex: 1;
+}
+.player-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: .3s opacity;
+}
+.player:hover .player-overlay {
+    opacity: 1;
+}

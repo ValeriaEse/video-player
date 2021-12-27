@@ -1,0 +1,28 @@
+.button {
+    inline-size: 32px; /*puso 60px para probar todo lo q comento abajo de centrar y no repeat*/
+    block-size: 32px;
+    border: none;
+    background-color: transparent; /* también puede ser UNSET o INITIAL*/
+    /*none no porque por defecto los botones vienen con un color, entonces dejaría ese de fondo al poner none*/
+    background-repeat: no-repeat; /*le puse un ancho de 60, eso hacía q la imagen de background entrara más de una vez, y con esto evito q se repita*/
+    background-position: center; /*en el caso del ancho de 60px, no quedaba centrada la imagen en su cuadro, por eso ponemos esto. Pero nonos hace falta porque en realidad el tamaño del elemento lo dejamos en 32x32, y es cuadrado. Solo lo hizo para mostrarnos*/
+    cursor: pointer;
+}
+.button:active{
+    transform: scale(.9);
+}
+#play {
+    background-image: url('../images/play.svg');
+
+}
+#pause{
+    background-image: url('../images/pause.svg');
+}
+#backward{
+    background-image: url('../images/-10.svg');
+
+}
+#forward{
+    background-image: url('../images/+10.svg');
+
+}
